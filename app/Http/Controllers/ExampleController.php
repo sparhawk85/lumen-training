@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
+
 class ExampleController extends Controller
 {
     /**
@@ -14,5 +16,13 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    /**
+     * @param  int $word
+     *
+     * @return Response
+     */
+    public function hello($word)
+    {
+        return 'Hello: ' . $word;
+    }
 }
