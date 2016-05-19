@@ -20,7 +20,7 @@ class User extends Model implements
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name', 'surname', 'email',
     ];
 
     /**
@@ -31,4 +31,16 @@ class User extends Model implements
     protected $hidden = [
         'password',
     ];
+
+    /**
+     * @param $name
+     * @param $surname
+     * @param $email
+     *
+     * @return string
+     */
+    public function helloWorld($name, $surname, $email)
+    {
+        return 'Hi:' . $name . ' ' . $surname . ' &lt;' . $email . '&gt;';
+    }
 }
