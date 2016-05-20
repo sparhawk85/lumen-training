@@ -18,3 +18,4 @@ $app->get('/', function () use ($app) {
 $app->get('example/{word}', 'ExampleController@hello');
 
 $app->get('hello', 'ExampleController@helloWithFullName');
+$app->get('api', 'ExampleController@api');

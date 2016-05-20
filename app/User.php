@@ -23,6 +23,7 @@ class User extends Model implements
         = [
             'name',
             'surname',
+            'api_token',
             'email',
         ];
 

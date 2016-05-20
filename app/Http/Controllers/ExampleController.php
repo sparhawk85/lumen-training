@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ExampleController extends Controller
 {
@@ -26,6 +27,16 @@ class ExampleController extends Controller
     public function hello(Request $request, $word)
     {
         return 'Hello: ' . $word;
+    }
+
+    /**
+     * @return Response
+     */
+    public function api(Request $request)
+    {
+        $user = Auth::user();
+        
+        return $user;
     }
 
     /**
