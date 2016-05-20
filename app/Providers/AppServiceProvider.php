@@ -15,4 +15,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+    public function boot()
+    {
+
+        view()->share('title', 'Studia podyplomowe');
+    }
 }

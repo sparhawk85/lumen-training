@@ -56,6 +56,7 @@ class ExampleController extends Controller
         );
         $fullName = (new User())->helloWorld($request->get('name'), $request->get('surname'), $request->get('email'));
 
-        return (new Response())->setContent($fullName);
+        
+        return view('example.hello', ['fullname' => $fullName]);
     }
 }
