@@ -46,7 +46,7 @@ class User extends Model implements
      */
     public function helloWorld($name, $surname, $email)
     {
-        return 'Hi:' . $name . ' ' . $surname . ' &lt;' . $email . '&gt;';
+        return 'Hi ' . $name . ' ' . $surname . ' &lt;' . $email . '&gt;';
     }
 
     /**
