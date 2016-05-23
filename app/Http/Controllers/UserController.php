@@ -16,4 +16,25 @@ class UserController extends Controller
     {
         return view('user.index', ['users' => User::all()]);
     }
+
+    /**
+     * @param Request $request
+     * @param         $id
+     *
+     * @return Response
+     */
+    public function edit(Request $request, $id)
+    {
+        return view('user.edit', ['user' => User::find($id)]);
+    }
+
+    /**
+     * @param Request $request
+     * @param         $id
+     *
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+    }
 }

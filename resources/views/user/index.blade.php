@@ -18,12 +18,14 @@
     <h3>Lista uzytkownikow</h3>
     <table class="table">
         <tr>
+            <th>#</th>
             <th>Imie</th>
             <th>Nazwisko</th>
             <th>Email</th>
         </tr>
         @forelse ($users as $user)
             <tr>
+                <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->surname}}</td>
                 <td>{{$user->email}}</td>
