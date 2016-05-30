@@ -1,3 +1,4 @@
 /vendor
 .env
 step-by-step.md
+database.sqlite
