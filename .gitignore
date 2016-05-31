@@ -1,4 +1,6 @@
 /vendor
 .env
 step-by-step.md
-database.sqlite
+/database/database.sqlite
+/step-by-step.pdf
+/extra-notes.md
