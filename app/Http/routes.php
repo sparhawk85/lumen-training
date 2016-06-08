@@ -18,6 +18,7 @@ $app->get('/', function () use ($app) {
 $app->get('example/{word}', 'ExampleController@hello');
 $app->get('user', 'UserController@index');
 $app->get('user/edit/{id}', 'UserController@edit');
+$app->get('user/delete/{id}', ['middleware' => 'auth', 'uses' => 'UserController@remove']);
 $app->post('user/update/{id}', ['as' => 'user.update', 'uses' => 'UserController@update']);
 
 $app->get('hello', 'ExampleController@helloWithFullName');

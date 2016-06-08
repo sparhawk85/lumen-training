@@ -72,4 +72,12 @@ class User extends Model implements
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->id == 1;
+    }
 }

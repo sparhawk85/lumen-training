@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -36,5 +35,24 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+    }
+
+    /**
+     * @param Request $request
+     * @param         $id
+     *
+     * @return Response
+     */
+    public function remove(Request $request, $id)
+    {
+        if (\Illuminate\Support\Facades\Gate::denies('delete')) {
+            return response('Access Denied.', 403);
+        }
+        if (\Illuminate\Support\Facades\Gate::allows('delete')) {
+            /** @var User $user */
+            $user = User::find($id);
+            $user->delete();
+            return redirect('/user');
+        }
     }
 }
